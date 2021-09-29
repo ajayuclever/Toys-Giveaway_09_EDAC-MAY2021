@@ -1,0 +1,25 @@
+#To create database:
+create database toysdb;
+
+#----------------------------------------------------------------
+
+#To create admin table:
+create table toysdb.admin(admin_id int primary key, username varchar(20),password varchar(20));
+
+#To insert data into admin table
+insert into toysdb.admin(admin_id,username,password) values(1,'admin','123456');
+
+#----------------------------------------------------------------
+
+#To create user table
+create table toysdb.user(user_id int primary key auto_increment, first_name varchar(50), last_name varchar(50), email varchar(50), password varchar(20), gender varchar(6), city varchar(30), user_type varchar(10));
+
+#----------------------------------------------------------------
+
+#To create toysdb.toys table
+create table toysdb.toys(toy_id int primary key auto_increment,toy_name varchar(50),toy_description varchar(200), toy_price long, quantity int, availability boolean, toy_image longblob, image_name varchar(200),seller_id int);
+
+#----------------------------------------------------------------
+
+#To create chat table
+create table chat(chat_id int primary key auto_increment,message varchar(200),from_user int,to_user int);
